@@ -17,7 +17,8 @@
 #
 # Author:
 #   sarkis
-#
+#   maletor
+
 moment = require("moment")
 require("moment-duration-format")
 
