@@ -1,0 +1,42 @@
+{
+  "name": "hubot-circle-build-status",
+  "description": "Build status from Circle in Campfire",
+  "version": "1.0.0",
+  "author": "Ellis Berner <eberner@gmail.com>",
+  "license": "MIT",
+
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "campfire",
+    "circle",
+    "build",
+    "status"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maletor/hubot-circle-build-status.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/maletor/hubot-circle-build-status/issues"
+  },
+
+  "dependencies": {
+    "coffee-script": "~1.6",
+    "moment": "~2.10",
+    "moment-duration-format": "~1.3"
+  },
+
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  },
+
+  "main": "index.coffee",
+
+  "scripts": {
+    "test": "script/test"
+  }
+}
