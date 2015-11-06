@@ -1,7 +1,7 @@
 {
   "name": "hubot-circle-build-status",
   "description": "Build status from Circle in Slack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Ellis Berner <eberner@gmail.com>",
   "license": "MIT",
 
