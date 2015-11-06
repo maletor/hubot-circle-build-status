@@ -1,13 +1,12 @@
 # Description:
-#   CircleCI notifier that listens for payloads at /circleci-notify and notifies proper Campfire room.
+#   CircleCI notifier that listens for payloads at /circleci-notify and notifies proper Slack channel.
 #
 # Dependencies:
 #   moment
 #   moment-duration-format
 #
 # Configuration:
-#   HUBOT_DANGER_ZONE_ROOM
-#   HUBOT_SITUATION_ROOM
+#   None
 #
 # Commands:
 #   None
@@ -18,6 +17,7 @@
 # Author:
 #   sarkis
 #   maletor
+#   mattpickle
 
 moment = require("moment")
 require("moment-duration-format")
@@ -25,7 +25,7 @@ require("moment-duration-format")
 module.exports = (robot) ->
   robot.router.post '/circleci-notify', (req, res) ->
     pl = req.body.payload
-    room = if pl.branch == "master" then process.env.HUBOT_DANGER_ZONE_ROOM else process.env.HUBOT_SITUATION_ROOM
+    room = if pl.branch == "master" then '#engineering' else '#notifications'
     duration = moment.duration(pl.build_time_millis, "ms").format("mm:ss", { trim: false })
     message = "#{pl.status.toUpperCase()}: #{pl.committer_name}'s build ##{pl.build_num} in #{pl.reponame}/#{pl.branch} completed in #{duration} -- #{pl.build_url}"
 
